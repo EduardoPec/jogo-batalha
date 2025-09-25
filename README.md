@@ -26,8 +26,8 @@ Um simulador de batalhas em Java, no estilo RPG, onde criaturas com atributos ú
 ## 📂 Estrutura do Projeto
 - src/
 - ├── application/ -> Classe principal (Program.java)
-- ├── model/ -> Classes de domínio (Criatura, Item, Habilidade, TipoElemental, etc.)
-- └── service/ -> Regras de negócio (BatalhaService, cálculos de dano, efeitos, etc.)
+- ├── model/ -> Classes de domínio (Criatura, Item, Habilidade, TipoElemental)
+- └── service/ -> Regras de negócio (BatalhaService e CalculadoraElemental)
 - test/
 - └── java/ -> Testes unitários com JUnit e Mockito
 
