@@ -6,6 +6,8 @@ import model.Habilidade;
 import java.util.Scanner;
 
 public class BatalhaService {
+	
+	private static final int MAXIMO_TURNOS = 50;
 
 	public void lutar(Criatura a, Criatura b) {
         System.out.println("=== INÍCIO DA BATALHA ===");
@@ -15,41 +17,43 @@ public class BatalhaService {
         Scanner scanner = new Scanner(System.in);
         int turno = 1;
         
-        while (a.estaVivo() && b.estaVivo()) {
+        while (a.estaVivo() && b.estaVivo() && turno <= MAXIMO_TURNOS) {
             System.out.println("\n------- Turno " + turno + " -------");
-
-            Criatura atacante, defensor;
-            if (a.getVelocidade() >= b.getVelocidade()) {
-                atacante = a;
-                defensor = b;
-            } else {
-                atacante = b;
-                defensor = a;
-            }
-
-            System.out.println("\nVez de " + atacante.getNome());
-            realizarAcao(atacante, defensor, scanner);
-
-            if (!defensor.estaVivo()) {
-                break;
-            }
-
-            System.out.println("\nVez de " + defensor.getNome());
-            realizarAcao(defensor, atacante, scanner);
-            
+            executarTurno(a, b, scanner);
             turno++;
-
-            if (turno > 50) {
-                System.out.println("\n*** BATALHA INTERROMPIDA - MÁXIMO DE TURNOS ATINGIDO ***");
-                break;
-            }
+        }
+        scanner.close();
+        
+        if (turno > MAXIMO_TURNOS) {
+            System.out.println("\n*** BATALHA INTERROMPIDA - MÁXIMO DE TURNOS ATINGIDO ***");
+        }
+        
+        declararVencedor(a, b);
+	 }
+        
+	public void executarTurno(Criatura a, Criatura b, Scanner scanner) {
+        Criatura atacante, defensor;
+        if (a.getVelocidade() >= b.getVelocidade()) {
+            atacante = a;
+            defensor = b;
+        } else {
+            atacante = b;
+            defensor = a;
         }
 
-        scanner.close();
+        System.out.println("\nVez de " + atacante.getNome());
+        realizarAcao(atacante, defensor, scanner);
 
-        if (a.estaVivo()) {
+        if (defensor.estaVivo()) {
+        	System.out.println("\nVez de " + defensor.getNome());
+            realizarAcao(defensor, atacante, scanner);
+        }
+	}
+      
+	public void declararVencedor(Criatura a, Criatura b) {
+        if (a.estaVivo() && !b.estaVivo()) {
             System.out.println("\n=== " + a.getNome() + " VENCEU A BATALHA! ===");
-        } else if (b.estaVivo()) {
+        } else if (b.estaVivo() && !a.estaVivo()) {
             System.out.println("\n=== " + b.getNome() + " VENCEU A BATALHA! ===");
         } else {
             System.out.println("\n===== EMPATE! =====");

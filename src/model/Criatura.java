@@ -14,6 +14,9 @@ public class Criatura {
     private final List<Item> itens = new ArrayList<>();
     private final List<Habilidade> habilidades = new ArrayList<>();
     
+	public Criatura() {
+	}
+
 	public Criatura(String nome, int hp, int atk, int def, int velocidade, TipoElemental tipo) {
 		this.nome = nome;
 		this.hp = hp;
@@ -111,6 +114,4 @@ public class Criatura {
 	public boolean temHabilidade() {
 	    return !habilidades.isEmpty();
 	}
-	
-	
 }

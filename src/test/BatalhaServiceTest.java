@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -8,6 +9,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import model.Criatura;
@@ -17,10 +19,15 @@ import model.TipoElemental;
 import service.BatalhaService;
 
 public class BatalhaServiceTest {
+	
+    private BatalhaService svc;
 
-    private BatalhaService svc = new BatalhaService();
- 
-    private Criatura criatura(String nome, int hp, int atk, int def, int vel, TipoElemental tipo) {
+    @BeforeEach
+    void setUp() {
+    	svc = new BatalhaService();
+    }
+
+	private Criatura criatura(String nome, int hp, int atk, int def, int vel, TipoElemental tipo) {
         return new Criatura(nome, hp, atk, def, vel, tipo);
     }
 

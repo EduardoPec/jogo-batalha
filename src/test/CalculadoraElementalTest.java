@@ -2,14 +2,21 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import model.TipoElemental;
 import service.CalculadoraElemental;
 
 public class CalculadoraElementalTest {
-	private CalculadoraElemental calculadora = new CalculadoraElemental();
 	
+	private CalculadoraElemental calculadora;
+
+	@BeforeEach
+	void setUp() {
+		calculadora = new CalculadoraElemental();
+	}
+
 	@Test
     void testarVantagem() {
         assertEquals(1.5, calculadora.calcularVantagem(TipoElemental.FOGO, TipoElemental.TERRA));

@@ -117,7 +117,6 @@ public class Program {
         for (int i=0; i<totalEscolhas; i++) {
             System.out.println("Habilidade #" + (i+1) + ":");
             
-            
             int opcao;
             while (true) {
                 System.out.println("Digite o número da habilidade: ");

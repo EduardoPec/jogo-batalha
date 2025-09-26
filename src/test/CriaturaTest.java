@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import model.Criatura;
@@ -12,8 +13,14 @@ import model.Item;
 import model.TipoElemental;
 
 public class CriaturaTest {	
+	
 	private Criatura criatura;
 	
+	@BeforeEach
+	void setUp() {
+		criatura = new Criatura();
+	}
+
 	@Test
 	void testarDanoMaiorQueDefesa() {	
 		criatura = new Criatura("Monstro", 100, 20, 10, 8, TipoElemental.FOGO);
