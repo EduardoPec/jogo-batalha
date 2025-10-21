@@ -7,11 +7,10 @@ Um simulador de batalhas em Java puro! No estilo RPG, onde criaturas com atribut
 ## ⚔️ Funcionalidades
 - Criação de criaturas personalizadas (HP, ataque, defesa, velocidade e tipo elemental).  
 - Sistema de **tipos elementais** com vantagens e desvantagens (Fogo, Água, Terra, Ar, Luz e Trevas).  
-- Mecânica de **itens de batalha** (poções, bombas, frascos elementais, etc.) que aplicam cura, dano ou efeitos de status.  
-- **Habilidades especiais** que adicionam mais profundidade à luta.  
+- Mecânica de **item de batalha** (poção de cura) que aplicam a cura.  
+- **Habilidades especiais** especificas para cada elemento, que adicionam mais profundidade à luta.  
 - Regras de cálculo de dano com base em ataque, defesa e modificadores elementais.  
-- Sistema de turnos definido pela velocidade das criaturas.  
-- Tratamento de efeitos contínuos (ex.: queimadura, enraizamento, confusão).  
+- Sistema de turnos definido pela velocidade das criaturas.   
 
 ---
 
@@ -37,3 +36,4 @@ Um simulador de batalhas em Java puro! No estilo RPG, onde criaturas com atribut
 1. Clone o repositório:
    ```bash
    git clone https://github.com/seu-usuario/JogoBatalhas.git
+   ```
