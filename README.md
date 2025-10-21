@@ -1,6 +1,6 @@
 # 🐉 Jogo de Batalhas Místicas  
 
-Um simulador de batalhas em Java, no estilo RPG, onde criaturas com atributos únicos, itens e habilidades especiais se enfrentam em duelos estratégicos.  
+Um simulador de batalhas em Java puro! No estilo RPG, onde criaturas com atributos únicos, itens e habilidades especiais se enfrentam em duelos estratégicos.  
 
 ---
 
